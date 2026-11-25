@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="manifest.json">
 <title>Dom Orione — Biblioteca Clássica</title>
 <meta name="theme-color" content="#203629">
 <meta name="description" content="Biblioteca interativa das cartas e escritos de São Luís Orione, com busca, calendário, notas, fontes e favoritos.">
@@ -1997,5 +1998,10 @@ setTimeout(function () { CARTAS.forEach(partesIndice); }, 0);
 }
 </style>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  }
+</script>
 </body>
 </html>
